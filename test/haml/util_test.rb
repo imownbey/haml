@@ -6,7 +6,7 @@ class UtilTest < Test::Unit::TestCase
   include Haml::Util
 
   def test_scope
-    assert(File.exist?(scope("Rakefile")))
+    assert(File.exist?(scope("VERSION")))
   end
 
   def test_to_hash

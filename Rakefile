@@ -66,7 +66,7 @@ desc "Install Haml as a gem."
 task :install => [:package] do
   sudo = RUBY_PLATFORM =~ /win32/ ? '' : 'sudo'
   gem  = RUBY_PLATFORM =~ /java/  ? 'jgem' : 'gem' 
-  sh %{#{sudo} #{gem} install --no-ri pkg/haml-#{File.read('VERSION').strip}}
+  sh %{#{sudo} #{gem} install --no-ri pkg/haml-#{File.read(File.join('lib', 'package', 'VERSION')).strip}}
 end
 
 desc "Release a new Haml package to Rubyforge. Requires the NAME and VERSION flags."
